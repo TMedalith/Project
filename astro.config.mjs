@@ -4,6 +4,8 @@ import tailwind from "@astrojs/tailwind";
 
 import netlify from "@astrojs/netlify";
 
+import vercel from "@astrojs/vercel/serverless";
+
 // https://astro.build/config
 export default defineConfig({
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
@@ -13,5 +15,5 @@ export default defineConfig({
   plugins: [],
   integrations: [tailwind()],
   output: "server",
-  adapter: netlify()
+  adapter: vercel()
 });
