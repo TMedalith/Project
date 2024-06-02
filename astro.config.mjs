@@ -2,6 +2,8 @@ import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 /** @type {import('tailwindcss').Config} */
 
+import netlify from "@astrojs/netlify";
+
 // https://astro.build/config
 export default defineConfig({
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
@@ -9,5 +11,7 @@ export default defineConfig({
     extend: {}
   },
   plugins: [],
-  integrations: [tailwind()]
+  integrations: [tailwind()],
+  output: "server",
+  adapter: netlify()
 });
